@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="employees">
 
 <head>
     <title>Demo</title>
@@ -14,6 +14,35 @@
 
 <body>
     <h1>Demo</h1>
+
+    <table class="table" ng-controller="all_employees">
+        <thead>
+            <tr>
+                <th>employee</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+
+        <tbody ng-repeat="employee in employees">
+
+            <tr>
+
+                <td>
+                    <a href="{{employee.name}}"> {{employee.name}}</a>
+                </td>
+                
+                <td>
+                    <button class="btn btn-warning" ng-click="update(employee)">UPDATE</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" ng-click="delete(employee)">DELETE</button>
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
 
 </body>
 
